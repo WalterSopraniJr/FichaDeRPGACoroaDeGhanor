@@ -36,9 +36,13 @@ namespace FichaDeRPGACoroaDeGhanor
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBoxRaca_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            AtualizarAtributos();
+        }
+        private void comboBoxClasse_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AtualizarAtributos();
         }
 
         private void btSalvar_Click(object sender, EventArgs e)
@@ -58,12 +62,18 @@ namespace FichaDeRPGACoroaDeGhanor
                 Poderes = new List<string>()
             };
 
+            SalvarPersonagem(personagem);
+
             MessageBox.Show("Personagem salvo com sucesso!");
         }
 
         private void FichaPersonagemForm_Load(object sender, EventArgs e)
         {
+            // Raças
+            comboBoxRaca.Items.AddRange(new string[] { "Humano", "Gigante", "Aberrante", "Anão" });
 
+            // Classes
+            comboBoxClasse.Items.AddRange(new string[] { "Bárbaro", "Bardo", "Caçador", "Druida", "Ladino", "Mago" });
         }
 
         private void SalvarPersonagem(Personagem personagem)
@@ -89,5 +99,69 @@ namespace FichaDeRPGACoroaDeGhanor
             string novoJson = JsonSerializer.Serialize(personagens, opcoes);
             File.WriteAllText(caminho, novoJson);
         }
+
+        private void AtualizarAtributos()
+        {
+            // Primeiro, ajuste base pela raça selecionada
+            switch (comboBoxRaca.SelectedItem?.ToString())
+            {
+                case "Humano":
+                    numericUpDownForca.Value = 7;
+                    numericUpDownHabilidade.Value = 7;
+                    numericUpDownPV.Value = 10;
+                    numericUpDownPM.Value = 10;
+                    break;
+                case "Gigante":
+                    numericUpDownForca.Value = 9;
+                    numericUpDownHabilidade.Value = 5;
+                    numericUpDownPV.Value = 15;
+                    numericUpDownPM.Value = 5;
+                    break;
+                case "Aberrante":
+                    numericUpDownForca.Value = 7;
+                    numericUpDownHabilidade.Value = 8;
+                    numericUpDownPV.Value = 10;
+                    numericUpDownPM.Value = 5;
+                    break;
+                case "Anão":
+                    numericUpDownForca.Value = 8;
+                    numericUpDownHabilidade.Value = 6;
+                    numericUpDownPV.Value = 15;
+                    numericUpDownPM.Value = 5;
+                    break;
+                default:
+                    // Se nada selecionado, limpar
+                    numericUpDownForca.Value = 0;
+                    numericUpDownHabilidade.Value = 0;
+                    numericUpDownPV.Value = 0;
+                    numericUpDownPM.Value = 0;
+                    break;
+            }
+
+            // Depois, ajuste os atributos de acordo com a classe
+            switch (comboBoxClasse.SelectedItem?.ToString())
+            {
+                case "Bárbaro":
+                    numericUpDownPV.Value += 5;
+                    break;
+                case "Bardo":
+                    numericUpDownHabilidade.Value += 1;
+                    break;
+                case "Caçador":
+                    numericUpDownForca.Value += 1;
+                    break;
+                case "Druida":
+                    numericUpDownPM.Value += 5;
+                    break;
+                case "Ladino":
+                    numericUpDownHabilidade.Value += 1;
+                    break;
+                case "Mago":
+                    numericUpDownPM.Value += 5;
+                    break;
+            }
+        }
+
+       
     }
 }

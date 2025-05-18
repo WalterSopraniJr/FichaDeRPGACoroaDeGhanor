@@ -100,7 +100,7 @@
             comboBoxRaca.Name = "comboBoxRaca";
             comboBoxRaca.Size = new Size(170, 23);
             comboBoxRaca.TabIndex = 6;
-            comboBoxRaca.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            comboBoxRaca.SelectedIndexChanged += comboBoxRaca_SelectedIndexChanged;
             // 
             // comboBoxClasse
             // 
@@ -109,6 +109,7 @@
             comboBoxClasse.Name = "comboBoxClasse";
             comboBoxClasse.Size = new Size(166, 23);
             comboBoxClasse.TabIndex = 7;
+            comboBoxClasse.SelectedIndexChanged += comboBoxClasse_SelectedIndexChanged;
             // 
             // Forca
             // 
@@ -230,7 +231,7 @@
             // 
             // btSalvar
             // 
-            btSalvar.Location = new Point(524, 138);
+            btSalvar.Location = new Point(506, 18);
             btSalvar.Name = "btSalvar";
             btSalvar.Size = new Size(75, 23);
             btSalvar.TabIndex = 22;
