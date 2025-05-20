@@ -16,5 +16,10 @@ namespace FichaDeRPGACoroaDeGhanor
         {
             InitializeComponent();
         }
+
+        private void btVoltarMenu_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

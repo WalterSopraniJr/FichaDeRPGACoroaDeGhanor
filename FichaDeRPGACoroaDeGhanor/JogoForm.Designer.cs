@@ -30,6 +30,7 @@
         {
             dataGridViewJornada = new DataGridView();
             lbJornada = new Label();
+            btVoltarMenu = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewJornada).BeginInit();
             SuspendLayout();
             // 
@@ -51,11 +52,22 @@
             lbJornada.TabIndex = 1;
             lbJornada.Text = "Jornada";
             // 
+            // btVoltarMenu
+            // 
+            btVoltarMenu.Location = new Point(465, 12);
+            btVoltarMenu.Name = "btVoltarMenu";
+            btVoltarMenu.Size = new Size(75, 41);
+            btVoltarMenu.TabIndex = 2;
+            btVoltarMenu.Text = "Voltar ao Menu";
+            btVoltarMenu.UseVisualStyleBackColor = true;
+            btVoltarMenu.Click += btVoltarMenu_Click;
+            // 
             // JogoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btVoltarMenu);
             Controls.Add(lbJornada);
             Controls.Add(dataGridViewJornada);
             Name = "JogoForm";
@@ -70,5 +82,6 @@
 
         private DataGridView dataGridViewJornada;
         private Label lbJornada;
+        private Button btVoltarMenu;
     }
 }

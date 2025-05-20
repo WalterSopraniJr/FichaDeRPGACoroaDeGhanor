@@ -49,6 +49,7 @@
             numericUpDownDinheiro = new NumericUpDown();
             label2 = new Label();
             btSalvar = new Button();
+            btVoltaMenu = new Button();
             ((System.ComponentModel.ISupportInitialize)numericUpDownForca).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownHabilidade).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownPV).BeginInit();
@@ -239,11 +240,22 @@
             btSalvar.UseVisualStyleBackColor = true;
             btSalvar.Click += btSalvar_Click;
             // 
+            // btVoltaMenu
+            // 
+            btVoltaMenu.Location = new Point(506, 59);
+            btVoltaMenu.Name = "btVoltaMenu";
+            btVoltaMenu.Size = new Size(75, 40);
+            btVoltaMenu.TabIndex = 23;
+            btVoltaMenu.Text = "Volta ao Menu";
+            btVoltaMenu.UseVisualStyleBackColor = true;
+            btVoltaMenu.Click += btVoltarMenu_Click;
+            // 
             // FichaPersonagemForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btVoltaMenu);
             Controls.Add(btSalvar);
             Controls.Add(numericUpDownDinheiro);
             Controls.Add(label2);
@@ -300,5 +312,6 @@
         private NumericUpDown numericUpDownDinheiro;
         private Label label2;
         private Button btSalvar;
+        private Button btVoltaMenu;
     }
 }

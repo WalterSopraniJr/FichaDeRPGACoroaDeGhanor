@@ -41,5 +41,10 @@ namespace FichaDeRPGACoroaDeGhanor
             dataGridViewJornada.MultiSelect = false;               // Só uma célula selecionada por vez
             dataGridViewJornada.EditMode = DataGridViewEditMode.EditOnKeystrokeOrF2; // Edita ao digitar ou pressionar F2
         }
+
+        private void btVoltarMenu_Click(object sender, EventArgs e)
+        {
+            this.Close(); // Fecha a tela atual e volta o Menu Principal
+        }
     }
 }

@@ -28,12 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "CemiterioForm";
+            btVoltarMenu = new Button();
+            SuspendLayout();
+            // 
+            // btVoltarMenu
+            // 
+            btVoltarMenu.Location = new Point(605, 57);
+            btVoltarMenu.Name = "btVoltarMenu";
+            btVoltarMenu.Size = new Size(75, 48);
+            btVoltarMenu.TabIndex = 0;
+            btVoltarMenu.Text = "Voltar ao Menu";
+            btVoltarMenu.UseVisualStyleBackColor = true;
+            btVoltarMenu.Click += btVoltarMenu_Click;
+            // 
+            // CemiterioForm
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(btVoltarMenu);
+            Name = "CemiterioForm";
+            Text = "CemiterioForm";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button btVoltarMenu;
     }
 }

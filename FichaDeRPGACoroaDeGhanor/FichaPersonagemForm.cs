@@ -162,6 +162,9 @@ namespace FichaDeRPGACoroaDeGhanor
             }
         }
 
-       
+        private void btVoltarMenu_Click(object sender, EventArgs e)
+        {
+            this.Close(); // Fecha a tela atual e volta o Menu Principal
+        }
     }
 }
